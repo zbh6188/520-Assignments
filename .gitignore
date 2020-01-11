@@ -1,8 +1,0 @@
-bin/
-build/
-html/
-latex/
-tmp/
-~*
-*.o
-*.a
