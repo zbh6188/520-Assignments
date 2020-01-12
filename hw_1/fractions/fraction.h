@@ -26,4 +26,5 @@ Fraction add ( Fraction a, Fraction b );
  */
 Fraction multiply ( Fraction a, Fraction b );
 
+Fraction reduce ( Fraction a);
 #endif
