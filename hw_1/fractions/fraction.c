@@ -19,9 +19,17 @@ Fraction reduce ( Fraction a ) {
     d = temp;
   }
   gcd = c;
-  if (a.num == 0 || a.den == 0) {
-    return (Fraction){a.num, a.den};
-  } else {
+  
+  if (a.num == 0 && a.den == 0) {
+    return (Fraction) {a.num, a.den};
+  } 
+  else if (a.num == 0 && a.den != 0) {
+    return (Fraction) {a.num, 1};
+  }
+  else if (a.num != 0 && a.den == 0) {
+    return (Fraction) {1, a.den};
+  } 
+  else {
     return (Fraction) {a.num / gcd, a.den / gcd};
   }
 }
