@@ -82,8 +82,8 @@ DynamicArray * DynamicArray_new(void) {
     da->buffer = (double *) calloc ( da->capacity, sizeof(double) ); 
     da->origin = da->capacity / 2;
     da->end = da->origin;
-    count++;
-    countForDestroy++;
+    // count++;
+    // countForDestroy++;
     return da;
     // forDestroy[countForDestroy] = da;
 }
@@ -91,7 +91,7 @@ DynamicArray * DynamicArray_new(void) {
 void DynamicArray_destroy(DynamicArray * da) {
     free(da->buffer);
     da->buffer = NULL;
-    count--;
+    // count--;
     return;
 }
 
