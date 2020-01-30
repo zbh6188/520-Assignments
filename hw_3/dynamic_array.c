@@ -11,17 +11,17 @@ static int countForDestroy = 0;
 
 // static DynamicArray * forDestroy [100];
 
-// int DynamicArray_num_arrays() {
-//     return count;
-// }
+int DynamicArray_num_arrays() {
+    return count;
+}
 
-// int DynamicArray_is_valid(const DynamicArray * da) {
-//     if (da->buffer != NULL) {
-//         return 1;
-//     } else {
-//         return 0;
-//     }
-// }
+int DynamicArray_is_valid(const DynamicArray * da) {
+    if (da->buffer != NULL) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
 
 // int DynamicArray_destroy_all() {
 //     for (int i = 0; i < countForDestroy; i++) {
@@ -82,7 +82,7 @@ DynamicArray * DynamicArray_new(void) {
     da->buffer = (double *) calloc ( da->capacity, sizeof(double) ); 
     da->origin = da->capacity / 2;
     da->end = da->origin;
-    // count++;
+    count++;
     // countForDestroy++;
     return da;
     // forDestroy[countForDestroy] = da;
@@ -91,7 +91,7 @@ DynamicArray * DynamicArray_new(void) {
 void DynamicArray_destroy(DynamicArray * da) {
     free(da->buffer);
     da->buffer = NULL;
-    // count--;
+    count--;
     return;
 }
 

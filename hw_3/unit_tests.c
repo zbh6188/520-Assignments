@@ -154,7 +154,7 @@ namespace {
     }
 
     TEST(DynamicArray, Range) {
-        DynamicArray * a = DynamicArray_range (1, 0, -0.1);
+        DynamicArray * a = DynamicArray_range (0, 1, -0.1);
         char * str = DynamicArray_to_string(a);
         printf("ToString Example: %s\n", str);
         DynamicArray_destroy(a);
@@ -191,17 +191,17 @@ namespace {
         free(str3);
     }
 
-//     TEST(DynamicArray, Count) {
-//         DynamicArray * a = DynamicArray_range(0, 1, 0.1);
-//         DynamicArray * b = DynamicArray_range(1.1, 2, 0.1);
-//         DynamicArray * c = DynamicArray_concat(a, b);
-//         ASSERT_EQ(DynamicArray_is_valid(a), 1);
-//         ASSERT_EQ(DynamicArray_num_arrays(), 9);
-//         DynamicArray_destroy_all();
-//         ASSERT_EQ(DynamicArray_is_valid(a), 0);
-//         ASSERT_EQ(DynamicArray_num_arrays(), 0);
-//         free(a);
-//         free(b);
-//         free(c);
-//    }
+    TEST(DynamicArray, Count) {
+        DynamicArray * a = DynamicArray_range(0, 1, 0.1);
+        DynamicArray * b = DynamicArray_range(1.1, 2, 0.1);
+        DynamicArray * c = DynamicArray_concat(a, b);
+        ASSERT_EQ(DynamicArray_is_valid(a), 1);
+        // ASSERT_EQ(DynamicArray_num_arrays(), 3);
+        // DynamicArray_destroy_all();
+        // ASSERT_EQ(DynamicArray_is_valid(a), 0);
+        // ASSERT_EQ(DynamicArray_num_arrays(), 0);
+        free(a);
+        free(b);
+        free(c);
+   }
 }
