@@ -1,6 +1,9 @@
 #include <exception>
 #include "db.h"
 #include <random>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h> 
 
 using namespace std;
 
@@ -84,6 +87,7 @@ DB &DB::create_test_data(int n) {
     double massMin = 0.01;
     double disMax = 10000000;
     double disMin = 0.1;
+    srand (time(NULL));
     
     for (int j = 0; j < n; j++) {
         string name;
