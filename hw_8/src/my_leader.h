@@ -13,8 +13,10 @@ namespace {
         void during() { 
             track_velocity(-3,0);
             if (sensor_value(0) < 30 && sensor_value(1) > 25) {
+                //track_velocity(0,0);
                 emit(Event("turn_left"));
             } else if (sensor_value(0) < 30 && sensor_value(2) > 25) {
+                //track_velocity(0,0);
                 emit(Event("turn_right"));
             }
           
@@ -26,7 +28,7 @@ namespace {
         public:
         void entry(const Event& e)  {}
         void during() { 
-            track_velocity(0,-14); 
+            track_velocity(0,-15); 
             if ( sensor_value(1) < 25 || sensor_value(2) < 25) {
                 emit(Event("go"));
             }
@@ -38,7 +40,7 @@ namespace {
         public:
         void entry(const Event& e)  {}
         void during() { 
-            track_velocity(0,14); 
+            track_velocity(0,15); 
             if ( sensor_value(1) < 25 || sensor_value(2) < 25) {
                 emit(Event("go"));
             }
